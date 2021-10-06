@@ -1,17 +1,20 @@
 import pymongo
+from pprint import pprint
 
-# 데이터베이스를 생성하는 코드입니다. 수정하지 마세요!
+
+# 데이터베이스와 컬렉션을 생성하는 코드입니다.
 connection = pymongo.MongoClient("mongodb://localhost:27017/")
 db = connection.get_database("library")
+col = db.get_collection("books")
 
-# 컬렉션을 생성하세요.
-col = db.get_collection('books')
+# 새로 들어온 책들입니다. 리스트로 묶어 선언하세요.
+new_book1 = {"title": "Alice\'s Adventures in Wonderland", "author": "Lewis Carroll", "publisher": "Macmillan", "date_received": "2015-11-26"}
+new_book2 = {"title": "The Old Man and the Sea", "author": "Ernest Miller Hemingway","publisher": "Charles Scribner\'s Sons" ,"date_received": "2014-11-02"}
+new_book3 = {"title": "The Great Gatsby", "author": "Francis Scott Key Fitzgerald", "date_received": "2019-01-12"}
 
-# 데이터를 삽입하는 코드: 컬렉션이 잘 생성되었는지 확인하기 위해서는 반드시 아래 주석을 해제하세요.
-data = col.insert_one({ "title": "Harry Potter and the Deathly Hallows", "author": "Joanne Kathleen Rowling","publisher": "Bloomsbury Publishing" ,"date_received": "2017-07-21"})
 
-# 컬렉션 목록을 reuslt 리스트에 저장하세요.
-result = db.list_collection_names()
+# 데이터를 만들고 삽입하세요.
+result = col.insert_many([new_book1, new_book2, new_book3])
 
-# 값을 잘 저장하였는지 확인하기 위한 코드입니다. 수정하지 마세요!
-print(result)
+# 삽입된 데이터 id들을 출력하세요.
+pprint(result.inserted_ids)
