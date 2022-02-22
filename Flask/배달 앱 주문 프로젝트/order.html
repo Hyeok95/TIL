@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% if orders %}
+    <ul>
+        {% for order in orders %}
+             <li><p>
+                 {{ order.id }} {{ order.user_id }} {{ order.store_id }} {{ order.total_price }} {{ order.delivery_fee }} {{ order.order_dt }} {{ order.order_method }} {{ order.delivery_address }}
+             </p></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>주문이 없습니다.</p>
+{% endif %}
