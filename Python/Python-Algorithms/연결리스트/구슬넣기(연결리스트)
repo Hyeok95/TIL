@@ -1,0 +1,83 @@
+#리스트
+
+class LinkedListElement :
+    def __init__(self, val, ptr) :
+        self.value = val
+        self.myNext = ptr
+
+class LinkedListPipe:
+    '''
+    Linked List를 이용하여 다음의 method들을 작성하세요.
+    '''
+    def __init__(self) :
+        '''
+        리스트 myPipe를 만듭니다. 이는 구슬의 배치를 저장합니다.
+        '''
+        self.start = None
+        self.end = None
+        pass
+
+    def addLeft(self, n) :
+        '''
+        파이프의 왼쪽으로 구슬 n을 삽입합니다.
+        '''
+        if self.start == None and self.end == None:
+            elem = LinkedListElement(n, None)
+            
+            self.start = elem
+            self.end = elem
+        else:
+            elem = LinkedListElement(n, self.start)
+            
+            self.start = elem
+
+    def addRight(self, n) :
+        '''
+        파이프의 오른쪽으로 구슬 n을 삽입합니다.
+        '''
+        if self.start == None and self.end == None:
+            elem = LinkedListElement(n, None)
+            
+            self.start = elem
+            self.end = elem
+        else:
+            #(value, ptr)
+            elem = LinkedListElement(n, None)
+            
+            #기존 끝값 다음값에 elem을 넣어줌
+            self.end.myNext = elem
+            #elme이 끝값이 됨
+            self.end = elem
+
+    def getBeads(self) :
+        '''
+        파이프의 배치를 list로 반환합니다.
+        '''
+        result = []
+        
+        current = self.start
+        
+        while current != None:
+            result.append(current.value)
+            current = current.myNext
+        
+        return result
+
+def processBeads(myInput) :
+    myPipe = LinkedListPipe()
+
+    for bead, direction in myInput:
+        if direction == 0:
+            myPipe.addLeft(bead)
+        elif direction == 1:
+            myPipe.addRight(bead)
+            
+    return myPipe.getBeads()
+    
+n = int(input())
+
+myList = []
+
+for i in range(n):
+    myList.append([int(v) for v in input().split()])
+print(*processBeads(myList))
