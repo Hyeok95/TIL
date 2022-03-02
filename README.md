@@ -8,10 +8,12 @@
 * BeautifulSoup, Selenium을 사용한 웹 크롤링
 * jupyter 노트북에서 데이터 쿼리를 위한 Pymongo
 <br>
+
 **Pandas Library**
 * Pandas를 사용하여 데이터를 전처리하는 방법과 데이터 분석 실습
 * Matplotlib, Seaborn 라이브러리를 사용하여 데이터를 시각화하는 방법
 <br>
+
 **Machine Learning**
 * [ML-DL-practice Repo참조](https://github.com/Hyeok95/ML-DL-practice)
 * Python 기반
@@ -35,7 +37,7 @@
 
 **R**
 * R의 기본 문법
-* <br>
-* 
+<br>
+
 **HTML5, CSS, JavaScript**
 <br>
