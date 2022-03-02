@@ -1,7 +1,7 @@
-# 오늘 배운 것 정리(Today I Learned)
+# 오늘 배운 것 정리!(Today I Learned)
 
 
-## 학습 내용
+## 📚학습 내용
 
 **Python**
 * 기초, 중급, 고급 문법 연산 및 알고리즘
