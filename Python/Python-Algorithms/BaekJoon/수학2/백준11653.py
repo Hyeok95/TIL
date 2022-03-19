@@ -1,11 +1,10 @@
 #백준11653
 n = int(input())
+m = 2
 
-if n==1:
-  print("")
-
-for i in range(2, n+1):
-  if n % i == 0:
-    while n % i ==0:
-      print(i)
-      n = n/i
+while n !=1:
+  if n%m==0:
+    print(m)
+    n = n/m
+  else:
+    m += 1
