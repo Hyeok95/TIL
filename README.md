@@ -7,6 +7,7 @@
 * 기초, 중급, 고급 문법 연산 및 알고리즘
 * BeautifulSoup, Selenium을 사용한 웹 크롤링
 * jupyter 노트북에서 데이터 쿼리를 위한 Pymongo
+* Keras, PyTorch 기반 ML, DL 모델 개발
 <br>
 
 **Pandas Library**
@@ -40,4 +41,8 @@
 <br>
 
 **HTML5, CSS, JavaScript**
+* 기본적인 웹의 구조, 디자인, 동작을 구현
+
+**JAVA**
+* 기초, 중급 문법 연산 및 알고리즘
 <br>
